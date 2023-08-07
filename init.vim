@@ -1,8 +1,12 @@
+:lua require("aalyth")
+
 call plug#begin()
 	Plug 'preservim/nerdtree'	
 	Plug 'sainnhe/everforest'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'bling/vim-airline'
+
+	Plug 'elixir-editors/vim-elixir'
 call plug#end()
 
 " NERDTree
@@ -19,7 +23,7 @@ let g:everforest_better_performance = 1
 colorscheme everforest
 
 " CoC
-CocInstall coc-clangd coc-css coc-docker coc-html coc-html-css-support coc-java coc-json coc-python coc-rust-analyzer coc-snippets coc-toml coc-yaml
+" CocInstall coc-clangd coc-css coc-docker coc-html coc-html-css-support coc-java coc-json coc-python coc-rust-analyzer coc-snippets coc-toml coc-yaml
 set updatetime=300 
 inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
 inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
