@@ -2,11 +2,16 @@
 
 call plug#begin()
 	Plug 'preservim/nerdtree'	
-	Plug 'sainnhe/everforest'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'bling/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
 
 	Plug 'elixir-editors/vim-elixir'
+	Plug 'neovimhaskell/haskell-vim'
+
+	Plug 'sainnhe/everforest'
+    Plug 'nordtheme/vim'
+    Plug 'andersevenrud/nordic.nvim'
 call plug#end()
 
 " NERDTree
@@ -18,9 +23,14 @@ let NERDTreeShowHidden=1
 if has('termguicolors')
   set termguicolors
 endif
-let g:everforest_background = 'soft'
-let g:everforest_better_performance = 1
-colorscheme everforest
+
+" let g:everforest_background = 'soft'
+" let g:everforest_better_performance = 1
+" colorscheme everforest
+
+colorscheme nord
+colorscheme nordic
+let g:airline_theme = 'nord'
 
 " CoC
 " CocInstall coc-clangd coc-css coc-docker coc-html coc-html-css-support coc-java coc-json coc-python coc-rust-analyzer coc-snippets coc-toml coc-yaml
@@ -32,4 +42,5 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 
 " Mappings & Tabulation
 tnoremap <Esc> <C-\><C-n>
-set ts=4 sw=4
+set ts=4 sw=4 
+set expandtab 

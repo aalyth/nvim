@@ -1,6 +1,7 @@
 
 vim.g.mapleader = ' '
-vim.keymap.set("n", "<leader>e", "<C-w>s<C-w>j:term<ENTER><C-w>15_<C-w>k")
+vim.keymap.set("n", "<leader>e", "<C-w>s<C-w>j:term<ENTER><C-w>10_<C-w>k")
+vim.keymap.set("n", "<leader>v", "<C-w>v<C-w>l:term<ENTER><C-w>5<<C-w>h")
 
 -- CoC GoTo
 vim.keymap.set("n", "gd", "<Plug>(coc-definition)", {silent = true})

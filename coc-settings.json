@@ -1,3 +1,23 @@
 {
-  "elixir.pathToElixirLS": "/home/dimitar/elixir-ls/language_server.sh"
+  "elixir.pathToElixirLS": "/home/dimitar/elixir-ls/language_server.sh",
+    "languageserver": {
+    "haskell": {
+      "command": "haskell-language-server-wrapper",
+      "args": [
+        "--lsp"
+      ],
+      "rootPatterns": [
+        ".stack.yaml",
+        ".hie-bios",
+        "BUILD.bazel",
+        "cabal.config",
+        "package.yaml"
+      ],
+      "filetypes": [
+        "hs",
+        "lhs",
+        "haskell"
+      ]
+    }
+  }
 }
