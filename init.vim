@@ -19,6 +19,9 @@ call plug#begin()
 
     Plug 'aktersnurra/no-clown-fiesta.nvim'
     Plug 'nvim-lualine/lualine.nvim'
+	Plug 'sainnhe/everforest'
+    Plug 'nordtheme/vim'
+    Plug 'andersevenrud/nordic.nvim'
 call plug#end()
 
 " NERDTree
@@ -39,14 +42,20 @@ endif
 " colorscheme nordic
 " let g:airline_theme = 'nord'
 
-colorscheme no-clown-fiesta 
-lua << END
-require('lualine').setup {
-    options = {
-        icons_enabled = false
-    }
-}
-END
+" Personal Laptop Setup
+" colorscheme no-clown-fiesta 
+" lua << END
+" require('lualine').setup {
+"     options = {
+"         icons_enabled = false
+"     }
+" }
+" END
+
+" PC Setup
+colorscheme nord
+colorscheme nordic
+let g:airline_theme = 'nord'
 
 " CoC
 " CocInstall coc-clangd coc-css coc-docker coc-html coc-html-css-support coc-java coc-json coc-python coc-rust-analyzer coc-snippets coc-toml coc-yaml
@@ -76,4 +85,3 @@ EOF
 tnoremap <Esc> <C-\><C-n>
 set ts=4 sw=4 
 set expandtab
-
