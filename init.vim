@@ -75,7 +75,7 @@ let g:prettier#autoformat_require_pragma = 0
 
 " Mappings & Tabulation
 tnoremap <Esc> <C-\><C-n>
-autocmd BufRead *.js,*.ts,*.jsx,*.tsx setlocal shiftwidth=2 softtabstop=2
+autocmd BufRead *.js,*.ts,*.jsx,*.tsx,*.html,*.css,*.sass,*.scss,*.json setlocal shiftwidth=2 softtabstop=2
 autocmd BufRead *.txt,*ch,*.lua,*.vim setlocal shiftwidth=4 softtabstop=4
 set expandtab
 
