@@ -3,11 +3,24 @@ vim.g.mapleader = ' '
 vim.keymap.set("n", "<leader>e", "<C-w>s<C-w>j:term<ENTER><C-w>10_<C-w>k")
 vim.keymap.set("n", "<leader>v", "<C-w>v<C-w>l:term<ENTER><C-w>5<<C-w>h")
 
--- CoC GoTo
+-- CoC
 vim.keymap.set("n", "gd", "<Plug>(coc-definition)", {silent = true})
 vim.keymap.set("n", "gy", "<Plug>(coc-type-definition)", {silent = true})
 vim.keymap.set("n", "gi", "<Plug>(coc-implementation)", {silent = true})
 vim.keymap.set("n", "gr", "<Plug>(coc-references)", {silent = true})
+
+vim.cmd([[
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+]])
+vim.keymap.set("n", "K", ":call ShowDocumentation()<CR>", {silent = true})
+
+vim.keymap.set("n", "rn", "<Plug>(coc-rename)", {silent = true})
 
 -- CoC manage floating windows/popups with <C-j> and <C-k>
 local opts = {silent = true, nowait = true, expr = true}
