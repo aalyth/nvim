@@ -3,11 +3,17 @@ lua require("aalyth")
 lua vim.opt.clipboard = 'unnamedplus'
 
 call plug#begin()
+        " Misc
         Plug 'preservim/nerdtree'	
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+        " Lines 
         Plug 'bling/vim-airline'
         Plug 'vim-airline/vim-airline-themes'
+        Plug 'nvim-lualine/lualine.nvim'
+        Plug 'kyazdani42/nvim-web-devicons'
         
+        " LSPs / Formatters
         Plug 'elixir-editors/vim-elixir'
         Plug 'neovimhaskell/haskell-vim'
         Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
@@ -20,15 +26,14 @@ call plug#begin()
         Plug 'nvim-lua/plenary.nvim'
         Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
         
+        " Colorschemes
         Plug 'sainnhe/everforest'
         Plug 'nordtheme/vim'
         Plug 'andersevenrud/nordic.nvim'
+        Plug 'rafamadriz/neon'
+        Plug 'EdenEast/nightfox.nvim'
         
         Plug 'aktersnurra/no-clown-fiesta.nvim'
-        Plug 'nvim-lualine/lualine.nvim'
-        Plug 'sainnhe/everforest'
-        Plug 'nordtheme/vim'
-        Plug 'andersevenrud/nordic.nvim'
 call plug#end()
 let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
 let g:ale_fix_on_save = 1
@@ -38,27 +43,12 @@ autocmd VimEnter * NERDTree | wincmd p
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 let NERDTreeShowHidden=1
 
-" Everforest
+" Colorscheme 
 if has('termguicolors')
   set termguicolors
 endif
 
-" let g:everforest_background = 'soft'
-" let g:everforest_better_performance = 1
-" colorscheme everforest
-
-" colorscheme nord
-" colorscheme nordic
-" let g:airline_theme = 'nord'
-
-colorscheme no-clown-fiesta 
-lua << END
-require('lualine').setup {
-    options = {
-        icons_enabled = false
-    }
-}
-END
+lua everforest()
 
 " CoC
 set updatetime=300 
@@ -70,7 +60,6 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 " Automatic Formattings
 let g:rustfmt_on_save = 1
 autocmd FileType c,cpp ClangFormatAutoEnable
-
 
 "source ~/.config/nvim/c_kernel_fmt.vim
 let g:clang_format#style_options = {
@@ -98,10 +87,14 @@ let g:prettier#autoformat_require_pragma = 0
 " Mappings & Tabulation
 tnoremap <Esc> <C-\><C-n>
 autocmd BufRead *.js,*.ts,*.jsx,*.tsx,*.html,*.css,*.sass,*.scss,*.json setlocal shiftwidth=2 softtabstop=2
-autocmd BufRead *.txt setlocal shiftwidth=4 softtabstop=4
+autocmd BufRead *.txt,*ch,*.lua,*.vim setlocal shiftwidth=4 softtabstop=4
 set expandtab
 
 syntax enable
 source ~/.vim/ftdetect/ch.vim
 
+<<<<<<< HEAD
 set colorcolumn=80,100
+=======
+" set colorcolumn=80
+>>>>>>> 7a80abee2c53a22b5d4fbffa47f4fd4c6df8284a
