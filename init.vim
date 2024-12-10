@@ -22,6 +22,9 @@ call plug#begin()
         Plug 'darrikonn/vim-gofmt', { 'do': ':GoUpdateBinaries' }
         Plug 'rhysd/vim-clang-format'
         Plug 'psf/black', { 'branch': 'stable' }
+
+        Plug 'nvim-lua/plenary.nvim'
+        Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
         
         " Colorschemes
         Plug 'sainnhe/everforest'
@@ -58,6 +61,14 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 let g:rustfmt_on_save = 1
 " let g:clang_format#style_options = {"BasedOnStyle" : "Chromium"}
 autocmd FileType c,cpp ClangFormatAutoEnable
+
+"source ~/.config/nvim/c_kernel_fmt.vim
+let g:clang_format#style_options = {
+        \ "AllowShortIfStatementsOnASingleLine" : "false",
+        \ "AllowShortLoopsOnASingleLine" : "false",
+        \ "AllowShortFunctionsOnASingleLine": "None",
+        \ "ColumnLimit": 100}
+let g:clang_format#code_stye = "Mozilla"
 
 lua <<EOF
 local format_sync_grp = vim.api.nvim_create_augroup("GoImport", {})
