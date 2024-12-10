@@ -56,6 +56,7 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 
 " Automatic Formattings
 let g:rustfmt_on_save = 1
+" let g:clang_format#style_options = {"BasedOnStyle" : "Chromium"}
 autocmd FileType c,cpp ClangFormatAutoEnable
 
 lua <<EOF
@@ -82,4 +83,4 @@ set expandtab
 syntax enable
 source ~/.vim/ftdetect/ch.vim
 
-" set colorcolumn=80
+set colorcolumn=80,100
