@@ -59,16 +59,16 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 
 " Automatic Formattings
 let g:rustfmt_on_save = 1
+
+" let g:clang_format#style_options = {
+"         \ "AllowShortIfStatementsOnASingleLine" : "false",
+"         \ "AllowShortLoopsOnASingleLine" : "false",
+"         \ "AllowShortFunctionsOnASingleLine": "None",
+"         \ "ColumnLimit": 100}
 " let g:clang_format#style_options = {"BasedOnStyle" : "Chromium"}
+source ~/.config/nvim/c_kernel_fmt.vim
 autocmd FileType c,cpp ClangFormatAutoEnable
 
-"source ~/.config/nvim/c_kernel_fmt.vim
-let g:clang_format#style_options = {
-        \ "AllowShortIfStatementsOnASingleLine" : "false",
-        \ "AllowShortLoopsOnASingleLine" : "false",
-        \ "AllowShortFunctionsOnASingleLine": "None",
-        \ "ColumnLimit": 100}
-let g:clang_format#code_stye = "Mozilla"
 
 lua <<EOF
 local format_sync_grp = vim.api.nvim_create_augroup("GoImport", {})
