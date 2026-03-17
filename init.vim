@@ -44,11 +44,11 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 let NERDTreeShowHidden=1
 
 " Colorscheme 
-if has('termguicolors')
-  set termguicolors
-endif
+" if has('termguicolors')
+"   set termguicolors
+" endif
 
-lua everforest()
+lua no_clown_fiesta()
 
 " CoC
 set updatetime=300 
@@ -66,7 +66,9 @@ let g:rustfmt_on_save = 1
 "         \ "AllowShortFunctionsOnASingleLine": "None",
 "         \ "ColumnLimit": 100}
 " let g:clang_format#style_options = {"BasedOnStyle" : "Chromium"}
-source ~/.config/nvim/c_kernel_fmt.vim
+" source ~/.config/nvim/c_kernel_fmt.vim
+let g:clang_format#code_style = 'llvm'
+let g:clang_format#style_options = { "AllowShortCaseLabelsOnASingleLine" : "true" }
 autocmd FileType c,cpp ClangFormatAutoEnable
 
 
@@ -88,10 +90,10 @@ let g:prettier#autoformat_require_pragma = 0
 " Mappings & Tabulation
 tnoremap <Esc> <C-\><C-n>
 autocmd BufRead *.js,*.ts,*.jsx,*.tsx,*.html,*.css,*.sass,*.scss,*.json setlocal shiftwidth=2 softtabstop=2
-autocmd BufRead *.txt,*ch,*.lua,*.vim setlocal shiftwidth=4 softtabstop=4
+autocmd BufRead *.txt,*.ch,*.lua,*.vim,*.cpp,*.hpp,*.g4 setlocal shiftwidth=4 softtabstop=4
 set expandtab
 
 syntax enable
-source ~/.vim/ftdetect/ch.vim
+" source ~/.vim/ftdetect/ch.vim
 
 set colorcolumn=80,100

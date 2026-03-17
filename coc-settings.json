@@ -14,5 +14,11 @@
       "filetypes": ["hs", "lhs", "haskell"]
     }
   },
+  "clangd": {
+    "filetypes": ["c", "cpp", "objc", "objcpp"],
+    "arguments": [
+      "--compile-commands-dir=."
+    ]
+  },
   "inlayHint.enable": false
 }
