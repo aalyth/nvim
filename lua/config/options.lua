@@ -1,5 +1,5 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.mapleader = vim.fn.has("mac") == 1 and "§" or " "
+vim.g.maplocalleader = vim.fn.has("mac") == 1 and "§" or " "
 
 vim.opt.clipboard = "unnamedplus"
 vim.opt.expandtab = true
