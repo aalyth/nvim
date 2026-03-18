@@ -1,0 +1,17 @@
+local autocmd = vim.api.nvim_create_autocmd
+
+autocmd("FileType", {
+  pattern = { "javascript", "typescript", "javascriptreact", "typescriptreact", "html", "css", "sass", "scss", "json" },
+  callback = function()
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.softtabstop = 2
+  end,
+})
+
+autocmd("FileType", {
+  pattern = { "text", "lua", "vim", "cpp", "c", "antlr4" },
+  callback = function()
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.softtabstop = 4
+  end,
+})
