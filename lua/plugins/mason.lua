@@ -10,6 +10,9 @@ return {
     opts = {
       ensure_installed = { "clangd", "gopls", "jdtls" },
       automatic_installation = true,
+      automatic_enable = {
+        exclude = { "jdtls" },
+      },
     },
   },
   {
