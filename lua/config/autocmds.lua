@@ -15,3 +15,11 @@ autocmd("FileType", {
     vim.opt_local.softtabstop = 4
   end,
 })
+
+autocmd("FileType", {
+  pattern = { "c", "go" },
+  callback = function()
+    vim.opt_local.shiftwidth = 8
+    vim.opt_local.softtabstop = 8
+  end,
+})

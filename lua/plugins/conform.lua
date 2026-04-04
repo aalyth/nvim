@@ -19,7 +19,7 @@ return {
     },
     formatters = {
       clang_format = {
-        prepend_args = { "--style=file" },
+        prepend_args = { "--style=file:" .. vim.fn.stdpath("config") .. "/.clang-format" },
       },
       eclipse_java_formatter = {
         -- Set this to the path of your Eclipse/IntelliJ formatter XML
