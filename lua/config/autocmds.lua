@@ -9,7 +9,7 @@ autocmd("FileType", {
 })
 
 autocmd("FileType", {
-  pattern = { "text", "lua", "vim", "cpp", "c", "antlr4" },
+  pattern = { "text", "lua", "vim", "cpp", "antlr4" },
   callback = function()
     vim.opt_local.shiftwidth = 4
     vim.opt_local.softtabstop = 4

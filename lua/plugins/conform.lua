@@ -7,7 +7,7 @@ return {
       cpp        = { "clang_format" },
       rust       = { "rustfmt" },
       go         = { "gofumpt", "goimports" },
-      java       = { "google-java-format" },
+      java       = { "eclipse_java_formatter" },
       haskell    = { "ormolu" },
       erlang     = { "erlfmt" },
       javascript = { "prettier" },
@@ -16,6 +16,15 @@ return {
       html       = { "prettier" },
       css        = { "prettier" },
       python     = { "black" },
+    },
+    formatters = {
+      clang_format = {
+        prepend_args = { "--style=file" },
+      },
+      eclipse_java_formatter = {
+        -- Set this to the path of your Eclipse/IntelliJ formatter XML
+        env = { JAVA_FORMATTER_CONFIG = vim.fn.expand("~/.config/eclipse-formatter.xml") },
+      },
     },
     format_on_save = {
       timeout_ms = 1000,
